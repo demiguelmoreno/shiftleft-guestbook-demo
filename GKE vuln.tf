@@ -20,7 +20,6 @@ resource "google_container_cluster" "workload_cluster" {
       cidr_block = "0.0.0.0/0"
     }
   }
-  enable_intranode_visibility = true
 }
 
 
