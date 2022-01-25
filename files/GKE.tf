@@ -4,6 +4,7 @@ data "google_compute_zones" "available_zones" {
 }
 
 resource "google_container_cluster" "workload_cluster" {
+  // Comment
   name               = "terragoat-${var.environment}-cluster"
   logging_service    = "none"
   location           = var.region
