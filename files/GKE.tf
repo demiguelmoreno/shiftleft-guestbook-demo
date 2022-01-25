@@ -21,7 +21,9 @@ resource "google_container_cluster" "workload_cluster" {
     }
   }
   enable_binary_authorization = true
+  enable_intranode_visibility = true
 }
+
 
 resource google_container_node_pool "custom_node_pool" {
   cluster  = google_container_cluster.workload_cluster.name
