@@ -21,7 +21,9 @@ resource "google_container_cluster" "workload_cluster" {
     }
   }
   enable_shielded_nodes = true
+  enable_intranode_visibility = true
 }
+
 
 
 
