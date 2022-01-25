@@ -4,7 +4,6 @@ data "google_compute_zones" "available_zones" {
 }
 
 resource "google_container_cluster" "workload_cluster" {
-  // Comment
   name               = "terragoat-${var.environment}-cluster"
   logging_service    = "none"
   location           = var.region
@@ -21,6 +20,7 @@ resource "google_container_cluster" "workload_cluster" {
       cidr_block = "0.0.0.0/0"
     }
   }
+  enable_intranode_visibility = true
 }
 
 resource google_container_node_pool "custom_node_pool" {
