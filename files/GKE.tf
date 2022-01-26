@@ -8,7 +8,7 @@ resource "google_container_cluster" "workload_cluster" {
   logging_service    = "none"
   location           = var.region
   initial_node_count = 1
-  // Comment
+
   enable_legacy_abac       = true
   monitoring_service       = "none"
   remove_default_node_pool = true
@@ -20,6 +20,8 @@ resource "google_container_cluster" "workload_cluster" {
       cidr_block = "0.0.0.0/0"
     }
   }
+  enable_binary_authorization = true
+  enable_intranode_visibility = true
 }
 
 resource google_container_node_pool "custom_node_pool" {
